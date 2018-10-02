@@ -1,17 +1,19 @@
 
-import {FETCH_USERS} from '../actions/index'
 
-const userReducer = (state =[], action)=>{
-  switch(action.type){
-    case FETCH_USERS:
-      return [action.payload.data, ...state];
+
+import {  FETCH_USERS } from '../actions/types';
+
+export default function userReducer(state = [], action) {
+  switch (action.type) {
     case "ADD_USER":
-      return state.concat([action.data]);
+       return state.concat([action.data]);
+
+      case FETCH_USERS:
+      let data = action.users;
+      let users = data.data;
+
+      return users;
     default:
       return state;
   }
-
-  return state;
 }
-
-export default userReducer;

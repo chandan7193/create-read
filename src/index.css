@@ -18,3 +18,28 @@ body {
   font: 15px Arial, sans-serif;
   display: inline-block;
 }
+
+.halfrounded {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #d6e9ff;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  background-color: #d6e9ff;
+}
+
+.cards {
+  padding: 15px;
+}
+
+.boxed {
+  border: 1px solid #ccc;
+
+  height: 140px;
+}
+.textAlignCenter {
+  text-align: center;
+}
+.padding25 {
+  padding: 25px;
+}

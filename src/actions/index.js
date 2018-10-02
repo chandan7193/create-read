@@ -1,16 +1,26 @@
 import axios from 'axios';
 
-const ROOT_URL = `https://s3.ap-south-1.amazonaws.com/lqstudy/front_end_assignment/table.json`
+import {  FETCH_USERS } from './types';
 
-export const FETCH_USERS = 'FETCH_USERS';
+const apiUrl = 'http://www.mocky.io/v2/5bb3c9113300005400cad3e9';
 
-export function fetchUsers(city){
+export const fetchUsers = (users) => {
 
-  const url = `${ROOT_URL}`;
-    const request = axios.get(url);
-
-  return{
+  return {
     type: FETCH_USERS,
-    payload : request
+    users
+  }
+};
+
+export const fetchAllUsers = () => {
+  return (dispatch) => {
+    return axios.get(apiUrl)
+      .then(response => {
+
+        dispatch(fetchUsers(response.data))
+      })
+      .catch(error => {
+        throw(error);
+      });
   };
-}
+};
