@@ -25,7 +25,11 @@ class UsersNew extends Component {
     type: "ADD_USER",
     data
   });
+    var x = document.getElementById("snackbar");
+  x.className = "show";
 
+
+setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
 
     this.getName.value = "";
     this.getLastName.value = "";
@@ -77,7 +81,8 @@ class UsersNew extends Component {
                 <br />
                 <input
                   required
-                  type="text"
+                  type="number"
+                  min="1" max="10"
                   ref={input => (this.getClassName = input)}
                   className="form-control"
                 />
@@ -105,6 +110,8 @@ class UsersNew extends Component {
             </div>
           </div>
         </form>
+
+        <div id="snackbar">Student data successfully added..</div>
         <br />
         <br />
         <br />
